@@ -30,8 +30,17 @@ export function Chess13Page() {
 
         {/* Main Project Card */}
         <div className="glass-effect rounded-2xl shadow-lg border border-white/20 p-6 sm:p-8 mb-6 sm:mb-8 animate-fade-in">
+          {/* Mobile: Logo en haut */}
+          <div className="flex justify-center mb-6 lg:hidden">
+            <img 
+              src="/logos/Chess13.png"
+              alt="Chess 13"
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-lg"
+            />
+          </div>
+          
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-6 lg:space-y-0">
-            <div className="flex-1 lg:pr-8">
+            <div className="flex-1 lg:pr-8 text-center lg:text-left">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse"></div>
                 <span className="text-sm font-semibold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Projet 2</span>
@@ -54,7 +63,8 @@ export function Chess13Page() {
                 </a>
               </div>
             </div>
-            <div className="flex justify-center lg:justify-end lg:ml-8">
+            {/* Desktop: Logo à droite */}
+            <div className="hidden lg:flex lg:justify-end lg:ml-8">
               <img 
                 src="/logos/Chess13.png"
                 alt="Chess 13"

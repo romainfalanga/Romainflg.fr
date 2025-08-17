@@ -178,34 +178,6 @@ export function HomePage() {
         </div>
       </div>
 
-      {/* Stats Section */}
-      <div className="py-12 sm:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-            <div className="text-center group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">4</div>
-              <div className="text-sm sm:text-base text-gray-600">Projets Innovants</div>
-            </div>
-            <div className="text-center group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">0</div>
-              <div className="text-sm sm:text-base text-gray-600">Nombre de comptes créés</div>
-            </div>
-            <div className="text-center group">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-accent-500 to-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-              </div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">0</div>
-              <div className="text-sm sm:text-base text-gray-600">Affiliés</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
