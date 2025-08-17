@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import { AuthForm } from './components/AuthForm';
 import { HomePage } from './pages/HomePage';
 import { ProfilePage } from './pages/ProfilePage';
-import { CreditsPage } from './pages/CreditsPage';
 import { FLGPassPage } from './pages/FLGPassPage';
 import { AffiliationProgramPage } from './pages/AffiliationProgramPage';
 import { DraftChessPage } from './pages/projects/DraftChessPage';
@@ -67,12 +66,6 @@ function App() {
               <ProtectedRoute>
                 <ProfilePage />
               </ProtectedRoute>
-            }
-          />
-          <Route
-            path="credits"
-            element={
-              <CreditsPage />
             }
           />
           <Route

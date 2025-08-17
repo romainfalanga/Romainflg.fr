@@ -1,1 +1,8 @@
+# Redirections pour SPA (Single Page Application)
 /*    /index.html   200
+
+# Redirections spécifiques si nécessaire
+/chess-value    https://chessvalue.com    302
+/chess-13       https://chess13.com       302
+/chess-100      https://chess100.com      302
+/draft-chess    https://draftchess.com    302

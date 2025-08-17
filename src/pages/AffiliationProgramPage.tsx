@@ -114,7 +114,7 @@ export function AffiliationProgramPage() {
           Vous voulez devenir affilié ?
         </h3>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-          Rejoignez notre programme d'affiliation et commencez à gagner de l'argent en partageant nos projets !
+          Rejoignez le programme d'affiliation et commencez à gagner de l'argent en partageant nos projets !
         </p>
         <button 
           onClick={() => setShowApplicationModal(true)}

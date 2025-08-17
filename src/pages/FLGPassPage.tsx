@@ -5,38 +5,31 @@ import { useCredits } from '../hooks/useCredits';
 
 const passPlans = [
   {
-    id: 'monthly',
-    name: 'FLG Pass Mensuel',
-    price: 9.99,
-    period: 'mois',
-    credits: 500,
-    features: [
-      'Accès prioritaire aux nouveaux projets',
-      '500 crédits inclus chaque mois',
-      'Support client prioritaire',
-      'Badge exclusif sur votre profil',
-      'Réductions sur les achats de crédits'
-    ],
+    id: 'bronze',
+    name: 'FLG Pass Bronze',
+    price: 6,
+    promoPrice: 5,
+    credits: 50,
     popular: false,
-    color: 'from-blue-500 to-purple-600'
+    color: 'from-amber-600 to-orange-600'
   },
   {
-    id: 'yearly',
-    name: 'FLG Pass Annuel',
-    price: 99.99,
-    period: 'an',
-    credits: 6500,
-    features: [
-      'Accès prioritaire aux nouveaux projets',
-      '6500 crédits inclus (500 bonus !)',
-      'Support client prioritaire',
-      'Badge exclusif sur votre profil',
-      'Réductions sur les achats de crédits',
-      '2 mois gratuits',
-      'Accès aux bêtas exclusives'
-    ],
+    id: 'silver',
+    name: 'FLG Pass Argent',
+    price: 12,
+    promoPrice: 10,
+    credits: 100,
     popular: true,
-    color: 'from-purple-600 to-pink-600'
+    color: 'from-gray-400 to-gray-600'
+  },
+  {
+    id: 'gold',
+    name: 'FLG Pass Or',
+    price: 24,
+    promoPrice: 20,
+    credits: 200,
+    popular: false,
+    color: 'from-yellow-500 to-yellow-600'
   }
 ];
 
@@ -90,7 +83,7 @@ export function FLGPassPage() {
           </span>
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Débloquez l'expérience premium sur tous les projets Romain FLG avec des avantages exclusifs et des crédits inclus
+          Choisissez votre formule FLG Pass et commencez à utiliser tous les projets Romain FLG
         </p>
         <div className="mt-6 w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
       </div>
@@ -120,7 +113,7 @@ export function FLGPassPage() {
       )}
 
       {/* Plans */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
         {passPlans.map((plan, index) => (
           <div
             key={plan.id}
@@ -146,8 +139,14 @@ export function FLGPassPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
               <div className="flex items-baseline justify-center space-x-2 mb-4">
-                <span className="text-4xl font-bold text-gray-900">{plan.price}€</span>
-                <span className="text-gray-500">/ {plan.period}</span>
+                <div className="flex flex-col items-center">
+                  <div className="flex items-baseline space-x-2">
+                    <span className="text-4xl font-bold text-gray-900">{plan.price}€</span>
+                  </div>
+                  <div className="text-sm text-green-600 font-medium mt-1">
+                    {plan.promoPrice}€ avec code promo
+                  </div>
+                </div>
               </div>
               <div className="flex items-center justify-center space-x-2 text-sm text-purple-600 bg-purple-50 px-3 py-1 rounded-full">
                 <Gift className="w-4 h-4" />
@@ -155,15 +154,10 @@ export function FLGPassPage() {
               </div>
             </div>
 
-            <div className="space-y-4 mb-8">
-              {plan.features.map((feature, featureIndex) => (
-                <div key={featureIndex} className="flex items-start space-x-3">
-                  <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-green-600" />
-                  </div>
-                  <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
-                </div>
-              ))}
+            <div className="text-center mb-8">
+              <p className="text-gray-600 text-sm">
+                Recevez {plan.credits} crédits chaque mois pour utiliser tous les projets Romain FLG
+              </p>
             </div>
 
             <button
@@ -186,9 +180,6 @@ export function FLGPassPage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             Pourquoi choisir FLG Pass ?
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Découvrez tous les avantages exclusifs qui vous attendent avec votre abonnement FLG Pass
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -196,9 +187,9 @@ export function FLGPassPage() {
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Zap className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Accès prioritaire</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Crédits universels</h3>
             <p className="text-gray-600 text-sm">
-              Soyez les premiers à tester nos nouveaux projets et fonctionnalités
+              Utilisez vos crédits sur tous les projets de l'écosystème Romain FLG
             </p>
           </div>
 
@@ -206,9 +197,9 @@ export function FLGPassPage() {
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Gift className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Crédits inclus</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Seul moyen d'obtenir des crédits</h3>
             <p className="text-gray-600 text-sm">
-              Recevez automatiquement vos crédits chaque mois pour profiter de tous nos services
+              Le FLG Pass est le seul moyen d'obtenir des crédits pour utiliser les projets
             </p>
           </div>
 
@@ -216,40 +207,14 @@ export function FLGPassPage() {
             <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <Star className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Badge exclusif</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Codes promo affiliés</h3>
             <p className="text-gray-600 text-sm">
-              Affichez fièrement votre statut premium avec un badge unique sur votre profil
+              Économisez avec les codes promo des affiliés et soutenez la communauté
             </p>
           </div>
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <div className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8">
-          Questions fréquentes
-        </h2>
-        <div className="space-y-4">
-          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
-            <h3 className="font-bold text-gray-900 mb-2">Puis-je annuler mon abonnement à tout moment ?</h3>
-            <p className="text-gray-600 text-sm">
-              Oui, vous pouvez annuler votre abonnement FLG Pass à tout moment depuis votre profil. Vous conserverez l'accès jusqu'à la fin de votre période de facturation.
-            </p>
-          </div>
-          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
-            <h3 className="font-bold text-gray-900 mb-2">Que se passe-t-il avec mes crédits si j'annule ?</h3>
-            <p className="text-gray-600 text-sm">
-              Tous les crédits que vous avez reçus ou achetés restent sur votre compte même après l'annulation de votre abonnement.
-            </p>
-          </div>
-          <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
-            <h3 className="font-bold text-gray-900 mb-2">Les crédits FLG Pass fonctionnent-ils sur tous les projets ?</h3>
-            <p className="text-gray-600 text-sm">
-              Absolument ! Vos crédits FLG Pass sont universels et peuvent être utilisés sur tous les projets de l'écosystème Romain FLG.
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* Subscription Modal */}
       {showSubscribe && selectedPlan && (
@@ -260,7 +225,7 @@ export function FLGPassPage() {
                 <Crown className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Confirmer l'abonnement
+                Confirmer l'achat
               </h3>
               <p className="text-gray-600">
                 {selectedPlan.name}
@@ -269,12 +234,16 @@ export function FLGPassPage() {
 
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 mb-6 border border-purple-100">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-gray-700 font-medium">Abonnement:</span>
+                <span className="text-gray-700 font-medium">Pass:</span>
                 <span className="font-bold">{selectedPlan.name}</span>
               </div>
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-700 font-medium">Prix:</span>
-                <span className="font-bold">{selectedPlan.price}€ / {selectedPlan.period}</span>
+                <span className="font-bold">{selectedPlan.price}€</span>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-gray-700 font-medium">Prix avec code promo:</span>
+                <span className="font-bold text-green-600">{selectedPlan.promoPrice}€</span>
               </div>
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-700 font-medium">Crédits inclus:</span>
@@ -284,6 +253,11 @@ export function FLGPassPage() {
               <div className="flex justify-between items-center font-bold text-lg">
                 <span>Total:</span>
                 <span className="text-purple-600">{selectedPlan.price}€</span>
+              </div>
+              <div className="text-center mt-2">
+                <span className="text-sm text-green-600 font-medium">
+                  ({selectedPlan.promoPrice}€ avec code promo affilié)
+                </span>
               </div>
             </div>
             

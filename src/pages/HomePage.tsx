@@ -73,10 +73,6 @@ export function HomePage() {
                 />
               </div>
               <div className="p-4 sm:p-6 lg:p-8">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs sm:text-sm font-semibold text-primary-600 bg-primary-50 px-2 sm:px-3 py-1 rounded-full">Projet 4</div>
-                  <div className="w-2 h-2 bg-accent-400 rounded-full animate-pulse"></div>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">Draft Chess</h3>
                 <p className="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed line-clamp-3">
                   L'échiquier où la partie commence avant le premier coup, en plaçant vos pièces tour à tour avec votre adversaire.
@@ -101,10 +97,6 @@ export function HomePage() {
                 />
               </div>
               <div className="p-4 sm:p-6 lg:p-8">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs sm:text-sm font-semibold text-primary-600 bg-primary-50 px-2 sm:px-3 py-1 rounded-full">Projet 3</div>
-                  <div className="w-2 h-2 bg-accent-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">Chess 100</h3>
                 <p className="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed line-clamp-3">
                   Atteignez la 100e rangée sur un plateau 100 x 8. Créez vos parcours, relevez ceux des autres et devenez le plus rapide.
@@ -129,10 +121,6 @@ export function HomePage() {
                 />
               </div>
               <div className="p-4 sm:p-6 lg:p-8">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs sm:text-sm font-semibold text-primary-600 bg-primary-50 px-2 sm:px-3 py-1 rounded-full">Projet 2</div>
-                  <div className="w-2 h-2 bg-accent-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">Chess 13</h3>
                 <p className="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed line-clamp-3">
                   Un plateau de 13 x 13. Un attaquant aux bords, un défenseur au centre. Préparez votre stratégie positionnelle et matez votre adversaire !
@@ -157,10 +145,6 @@ export function HomePage() {
                 />
               </div>
               <div className="p-4 sm:p-6 lg:p-8">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-xs sm:text-sm font-semibold text-primary-600 bg-primary-50 px-2 sm:px-3 py-1 rounded-full">Projet 1</div>
-                  <div className="w-2 h-2 bg-accent-400 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-                </div>
                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">Chess Value</h3>
                 <p className="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed line-clamp-3">
                   Chess Value évalue en temps réel la valeur des pièces selon la position, pour analyser et améliorer vos stratégies aux échecs.

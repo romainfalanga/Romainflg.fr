@@ -41,10 +41,6 @@ export function DraftChessPage() {
           
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between space-y-6 lg:space-y-0">
             <div className="flex-1 lg:pr-8 text-center lg:text-left">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-primary-600 bg-primary-50 px-3 py-1 rounded-full">Projet 4</span>
-              </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Draft Chess</h1>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 L'échiquier où la partie commence avant le premier coup, en plaçant vos pièces tour à tour avec votre adversaire.
