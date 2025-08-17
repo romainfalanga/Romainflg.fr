@@ -9,13 +9,21 @@ interface ApplicationModalProps {
   tiktokPlaceholder?: string;
 }
 
+const projects = [
+  { id: 'chess-value', name: 'Chess Value', logo: '/logos/ChessValue.png' },
+  { id: 'chess-13', name: 'Chess 13', logo: '/logos/Chess13.png' },
+  { id: 'chess-100', name: 'Chess 100', logo: '/logos/Chess100.png' },
+  { id: 'draft-chess', name: 'Draft Chess', logo: '/logos/DraftChess.png' }
+];
+
 export function ApplicationModal({ isOpen, onClose, projectName, position, tiktokPlaceholder = "@projet_pseudo" }: ApplicationModalProps) {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     telegramName: '',
     tiktokUsername: '',
-    motivation: ''
+    motivation: '',
+    selectedProjects: [] as string[]
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -29,8 +37,18 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
       email: '',
       telegramName: '',
       tiktokUsername: '',
-      motivation: ''
+      motivation: '',
+      selectedProjects: []
     });
+  };
+
+  const handleProjectToggle = (projectId: string) => {
+    setFormData(prev => ({
+      ...prev,
+      selectedProjects: prev.selectedProjects.includes(projectId)
+        ? prev.selectedProjects.filter(id => id !== projectId)
+        : [...prev.selectedProjects, projectId]
+    }));
   };
 
   if (!isOpen) return null;
@@ -41,7 +59,7 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
         {/* Header */}
         <div className="flex items-center justify-between p-8 border-b border-gray-100 bg-gradient-to-r from-primary-50 to-secondary-50">
           <h2 className="text-2xl font-bold text-gray-900">
-            Postuler pour {projectName}
+            {position === 'Affilié' ? 'Postuler pour Programme d\'Affiliation' : `Postuler pour ${projectName}`}
           </h2>
           <button
             onClick={onClose}
@@ -80,6 +98,17 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
                     : 'Rejoignez le Telegram pour vous démarquer ! Partagez vos TikToks, proposez des idées innovantes et montrez votre valeur ajoutée. C\'est le meilleur moyen de prouver votre motivation et vos compétences.'
                   }
                 </p>
+                <div className="mt-4">
+                  <a
+                    href="https://t.me/RomainFLGpublic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-4 py-2 rounded-xl font-medium transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm"
+                  >
+                    <span className="text-lg">📱</span>
+                    <span>Rejoindre le Telegram</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -143,6 +172,42 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
                 />
               </div>
             </div>
+
+            {position === 'Affilié' && (
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-3">
+                  Projets à promouvoir *
+                </label>
+                <p className="text-sm text-gray-600 mb-4">
+                  Sélectionnez les projets sur lesquels vous comptez faire la promotion :
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {projects.map((project) => (
+                    <label
+                      key={project.id}
+                      className={`flex items-center space-x-3 p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
+                        formData.selectedProjects.includes(project.id)
+                          ? 'border-primary-500 bg-primary-50'
+                          : 'border-gray-200 hover:border-primary-300 hover:bg-gray-50'
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.selectedProjects.includes(project.id)}
+                        onChange={() => handleProjectToggle(project.id)}
+                        className="w-5 h-5 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                      />
+                      <img
+                        src={project.logo}
+                        alt={project.name}
+                        className="w-8 h-8 object-contain"
+                      />
+                      <span className="font-medium text-gray-900">{project.name}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-3">

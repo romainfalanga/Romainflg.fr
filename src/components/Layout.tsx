@@ -156,6 +156,16 @@ function Layout() {
                             <Users size={16} />
                             <span className="font-medium">Programme d'affiliation</span>
                           </Link>
+                          <a
+                            href="https://t.me/RomainFLGpublic"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            <span className="text-lg">📱</span>
+                            <span className="font-medium">Rejoindre le Telegram</span>
+                          </a>
                         </div>
                       </>
                     ) : (
@@ -203,6 +213,16 @@ function Layout() {
                             <Users size={16} />
                             <span className="font-medium">Programme d'affiliation</span>
                           </Link>
+                          <a
+                            href="https://t.me/RomainFLGpublic"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            <span className="text-lg">📱</span>
+                            <span className="font-medium">Rejoindre le Telegram</span>
+                          </a>
                         </div>
                       </>
                     )}
@@ -215,7 +235,7 @@ function Layout() {
                         </span>
                       </div>
                       <a
-                        href="https://t.me/ChessValue"
+                        href="https://chessvalue.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
@@ -227,7 +247,7 @@ function Layout() {
                         <ExternalLink size={14} className="text-gray-400" />
                       </a>
                       <a
-                        href="https://t.me/Chess13Game"
+                        href="https://chess13.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
@@ -239,7 +259,7 @@ function Layout() {
                         <ExternalLink size={14} className="text-gray-400" />
                       </a>
                       <a
-                        href="https://t.me/Chess100Game"
+                        href="https://chess100.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
@@ -251,7 +271,7 @@ function Layout() {
                         <ExternalLink size={14} className="text-gray-400" />
                       </a>
                       <a
-                        href="https://t.me/DraftChessGame"
+                        href="https://draftchess.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"

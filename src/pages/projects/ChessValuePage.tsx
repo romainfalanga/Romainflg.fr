@@ -44,15 +44,6 @@ export function ChessValuePage() {
               {/* Project Links */}
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <a 
-                  href="https://t.me/ChessValue" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-4 py-3 sm:px-6 sm:py-3 rounded-xl font-medium transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
-                >
-                  <span className="text-lg">📱</span>
-                  <span>Rejoindre le Telegram</span>
-                </a>
-                <a 
                   href="https://chessvalue.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
