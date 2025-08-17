@@ -190,6 +190,14 @@ function Layout() {
                             <span className="font-medium">Accueil</span>
                           </Link>
                           <Link
+                            to="/flg-pass"
+                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            <CreditCard size={16} />
+                            <span className="font-medium">FLG Pass</span>
+                          </Link>
+                          <Link
                             to="/affiliation"
                             className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
                             onClick={() => setUserMenuOpen(false)}

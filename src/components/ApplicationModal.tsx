@@ -80,7 +80,7 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
                 </h3>
                 <p className="text-gray-600">
                   {position === 'Affilié' 
-                    ? 'Rejoignez le programme d\'affiliation et gagnez de l\'argent en partageant mes projets. Obtenez votre code promo personnel et touchez une commission sur chaque vente.'
+                    ? 'Rejoignez le programme d\'affiliation et gagnez de l\'argent en partageant mes projets. Obtenez votre code promo personnel et touchez une commission sur chaque abonnement.'
                     : 'Pour devenir un des CM du projet, vous devrez publier régulièrement sur TikTok à propos du projet. Vous pouvez même créer un compte TikTok dédié exclusivement au projet et vous démarquer par votre créativité.'
                   }
                 </p>

@@ -87,7 +87,7 @@ export function Chess100Page() {
                 </p>
                 <p className="text-base sm:text-lg">
                   Rejoins le programme d'affiliation et obtiens ton code promo personnel.
-                  Chaque fois qu'une personne achète des crédits en utilisant ton code, tu touches une commission en argent réel.
+                  Chaque fois qu'une personne s'abonne au FLG Pass en utilisant ton code, tu touches une commission récurrente tant que cette personne maintient son abonnement.
                 </p>
                 <div className="bg-white rounded-xl p-4 sm:p-6 border border-accent-300 shadow-sm">
                   <p className="text-base sm:text-lg font-medium text-accent-800">
