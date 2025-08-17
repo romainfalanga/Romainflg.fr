@@ -201,7 +201,7 @@ export function HomePage() {
                 <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">0</div>
-              <div className="text-sm sm:text-base text-gray-600">Community Managers</div>
+              <div className="text-sm sm:text-base text-gray-600">Affiliés</div>
             </div>
           </div>
         </div>

@@ -57,25 +57,28 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
           <div className="mb-8">
             <div className="flex items-center space-x-4 mb-6">
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Poste : Community Manager (1€ par code utilisé)</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">
+                  {position === 'Affilié' ? 'Programme d\'affiliation' : 'Poste : Community Manager (1€ par code utilisé)'}
+                </h3>
                 <p className="text-gray-600">
-                  Pour devenir un des CM du projet, vous devrez publier régulièrement sur TikTok à propos du projet. Vous pouvez même créer un compte TikTok dédié exclusivement au projet et vous démarquer par votre créativité.
+                  {position === 'Affilié' 
+                    ? 'Rejoignez le programme d\'affiliation et gagnez de l\'argent en partageant mes projets. Obtenez votre code promo personnel et touchez une commission sur chaque vente.'
+                    : 'Pour devenir un des CM du projet, vous devrez publier régulièrement sur TikTok à propos du projet. Vous pouvez même créer un compte TikTok dédié exclusivement au projet et vous démarquer par votre créativité.'
+                  }
                 </p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-r from-secondary-50 to-primary-50 border border-secondary-200 rounded-xl p-6 mb-6">
-              <p className="text-secondary-800 leading-relaxed">
-                En échange de cet investissement créatif et communautaire, vous recevrez <strong>un code promo personnel et toucherez 1€ de commission sur toutes les ventes où votre code promo a été utilisé</strong>.
-              </p>
-            </div>
-
             <div className="flex items-center space-x-4 mb-6">
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Conseil pour maximiser vos chances</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-2">
+                  {position === 'Affilié' ? 'Comment maximiser vos gains' : 'Conseil pour maximiser vos chances'}
+                </h3>
                 <p className="text-gray-600">
-                  Rejoignez le Telegram pour vous démarquer ! Partagez vos TikToks, proposez des idées innovantes et montrez votre valeur ajoutée. 
-                  C'est le meilleur moyen de prouver votre motivation et vos compétences.
+                  {position === 'Affilié'
+                    ? 'Rejoignez le Telegram du projet pour rester informé des nouveautés et obtenir des conseils pour optimiser vos partages. Plus vous êtes actif, plus vous pouvez générer de revenus !'
+                    : 'Rejoignez le Telegram pour vous démarquer ! Partagez vos TikToks, proposez des idées innovantes et montrez votre valeur ajoutée. C\'est le meilleur moyen de prouver votre motivation et vos compétences.'
+                  }
                 </p>
               </div>
             </div>
@@ -143,7 +146,7 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-3">
-                Motivation *
+                {position === 'Affilié' ? 'Pourquoi voulez-vous devenir affilié ? *' : 'Motivation *'}
               </label>
               <textarea
                 required
@@ -151,7 +154,10 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
                 value={formData.motivation}
                 onChange={(e) => setFormData({ ...formData, motivation: e.target.value })}
                 className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-all duration-300"
-                placeholder="Pourquoi voulez-vous rejoindre ce projet ? Quelle valeur pouvez-vous apporter ?"
+                placeholder={position === 'Affilié' 
+                  ? 'Expliquez pourquoi vous souhaitez devenir affilié et comment vous comptez promouvoir le projet...'
+                  : 'Pourquoi voulez-vous rejoindre ce projet ? Quelle valeur pouvez-vous apporter ?'
+                }
               />
             </div>
 
@@ -160,7 +166,7 @@ export function ApplicationModal({ isOpen, onClose, projectName, position, tikto
                 type="submit"
                 className="flex-1 btn-primary"
               >
-                Envoyer ma candidature
+                {position === 'Affilié' ? 'Rejoindre le programme' : 'Envoyer ma candidature'}
               </button>
               <button
                 type="button"

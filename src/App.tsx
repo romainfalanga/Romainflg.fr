@@ -6,6 +6,7 @@ import { HomePage } from './pages/HomePage';
 import { ProfilePage } from './pages/ProfilePage';
 import { CreditsPage } from './pages/CreditsPage';
 import { FLGPassPage } from './pages/FLGPassPage';
+import { AffiliationProgramPage } from './pages/AffiliationProgramPage';
 import { DraftChessPage } from './pages/projects/DraftChessPage';
 import { Chess100Page } from './pages/projects/Chess100Page';
 import { Chess13Page } from './pages/projects/Chess13Page';
@@ -78,6 +79,12 @@ function App() {
             path="flg-pass"
             element={
               <FLGPassPage />
+            }
+          />
+          <Route
+            path="affiliation"
+            element={
+              <AffiliationProgramPage />
             }
           />
           <Route path="projects/draft-chess" element={<DraftChessPage />} />

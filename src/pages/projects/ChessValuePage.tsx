@@ -40,6 +40,28 @@ export function ChessValuePage() {
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 Chess Value évalue en temps réel la valeur des pièces selon la position, pour analyser et améliorer vos stratégies aux échecs.
               </p>
+              
+              {/* Project Links */}
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <a 
+                  href="https://t.me/ChessValue" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-4 py-3 sm:px-6 sm:py-3 rounded-xl font-medium transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
+                >
+                  <span className="text-lg">📱</span>
+                  <span>Rejoindre le Telegram</span>
+                </a>
+                <a 
+                  href="https://chessvalue.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-4 py-3 sm:px-6 sm:py-3 rounded-xl font-medium transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
+                >
+                  <span className="text-lg">🌐</span>
+                  <span>Accéder au site</span>
+                </a>
+              </div>
             </div>
             <div className="flex justify-center lg:justify-end lg:ml-8">
               <img 
@@ -53,92 +75,41 @@ export function ChessValuePage() {
 
         {/* Team Section */}
         <div className="glass-effect rounded-2xl shadow-lg border border-white/20 p-6 sm:p-8 animate-slide-up">
-          <div className="flex items-center space-x-3 mb-6 sm:mb-8">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-              <Users className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-            </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">L'équipe du projet</h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            {/* CEO */}
-            <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-200 rounded-2xl mx-auto mb-3 sm:mb-4 overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <img 
-                  src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" 
-                  alt="Romain Falanga" 
-                  className="w-full h-full object-cover"
-                />
+          <div className="mb-8">
+            <div className="bg-gradient-to-r from-accent-50 to-primary-50 rounded-2xl p-6 sm:p-8 border border-accent-200 mb-6">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-accent-500 to-primary-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
+                  <span className="text-2xl sm:text-3xl">💰</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Programme d'affiliation</h3>
               </div>
-              <div className="font-bold text-gray-900 mb-1 text-sm sm:text-base">CEO</div>
-              <div className="text-xs sm:text-sm text-gray-600 mb-1">Directeur général</div>
-              <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Romain Falanga</div>
-              <button className="btn-primary text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2">
-                Voir le profil
-              </button>
-            </div>
-
-            {/* CM 1 */}
-            <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-lg sm:text-2xl font-bold">?</span>
+              
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg">
+                  Tu apprécies ce projet et tu as envie de le partager autour de toi ?
+                </p>
+                <p className="text-base sm:text-lg">
+                  Rejoins le programme d'affiliation et obtiens ton code promo personnel.
+                  Chaque fois qu'une personne achète des crédits en utilisant ton code, tu touches une commission en argent réel.
+                </p>
+                <div className="bg-white rounded-xl p-4 sm:p-6 border border-accent-300 shadow-sm">
+                  <p className="text-base sm:text-lg font-medium text-accent-800">
+                    👉 Plus tu fais découvrir le projet (TikTok, réseaux sociaux, bouche-à-oreille), plus tu peux générer de revenus grâce à ton code.
+                  </p>
+                </div>
               </div>
-              <div className="font-bold text-gray-900 mb-1 text-sm sm:text-base">CM 1</div>
-              <div className="text-xs sm:text-sm text-gray-600 mb-1">Community Manager</div>
-              <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Recherche active</div>
+            </div>
+            
+            {/* Application Button */}
+            <div className="text-center">
               <button 
-                className="btn-primary text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2"
-                onClick={() => handleApply('CM 1')}
+                onClick={() => handleApply('Affilié')}
+                className="bg-gradient-to-r from-accent-600 to-primary-600 hover:from-accent-700 hover:to-primary-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
               >
-                Postuler
+                <span className="text-lg">🚀</span>
+                <span>Devenir affilié</span>
               </button>
             </div>
-
-            {/* CM 2 */}
-            <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-lg sm:text-2xl font-bold">?</span>
-              </div>
-              <div className="font-bold text-gray-900 mb-1 text-sm sm:text-base">CM 2</div>
-              <div className="text-xs sm:text-sm text-gray-600 mb-1">Community Manager</div>
-              <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Recherche active</div>
-              <button 
-                className="btn-primary text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2"
-                onClick={() => handleApply('CM 2')}
-              >
-                Postuler
-              </button>
-            </div>
-
-            {/* CM 3 */}
-            <div className="text-center group">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-gray-300 to-gray-400 rounded-2xl mx-auto mb-3 sm:mb-4 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-lg sm:text-2xl font-bold">?</span>
-              </div>
-              <div className="font-bold text-gray-900 mb-1 text-sm sm:text-base">CM 3</div>
-              <div className="text-xs sm:text-sm text-gray-600 mb-1">Community Manager</div>
-              <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Recherche active</div>
-              <button 
-                className="btn-primary text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2"
-                onClick={() => handleApply('CM 3')}
-              >
-                Postuler
-              </button>
-            </div>
-          </div>
-
-          {/* Telegram Button */}
-          <div className="text-center">
-            <a 
-              href="https://t.me/ChessValue" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white px-4 py-3 sm:px-6 sm:py-3 rounded-xl font-medium transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
-            >
-              <span className="text-lg">📱</span>
-              <span className="hidden sm:inline">Rejoindre le Telegram</span>
-              <span className="sm:hidden">Telegram</span>
-            </a>
           </div>
         </div>
       </div>

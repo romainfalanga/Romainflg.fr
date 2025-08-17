@@ -62,3 +62,14 @@ export interface Project {
   is_active: boolean;
   created_at: string;
 }
+
+export interface Affiliate {
+  id: string;
+  user_id: string;
+  username: string;
+  promo_code: string;
+  total_uses: number;
+  total_commission: number;
+  created_at: string;
+  avatar_url?: string;
+}

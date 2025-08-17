@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
-import { User, CreditCard, Home, LogOut, Bell, Menu, X, ChevronDown, ExternalLink } from 'lucide-react';
+import { User, CreditCard, Home, LogOut, Bell, Menu, X, ChevronDown, ExternalLink, Users } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import { useCredits } from '../hooks/useCredits';
 
@@ -148,6 +148,14 @@ function Layout() {
                             <CreditCard size={16} />
                             <span className="font-medium">FLG Pass</span>
                           </Link>
+                          <Link
+                            to="/affiliation"
+                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            <Users size={16} />
+                            <span className="font-medium">Programme d'affiliation</span>
+                          </Link>
                         </div>
                       </>
                     ) : (
@@ -186,6 +194,14 @@ function Layout() {
                           >
                             <CreditCard size={16} />
                             <span className="font-medium">Crédits</span>
+                          </Link>
+                          <Link
+                            to="/affiliation"
+                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-all duration-300"
+                            onClick={() => setUserMenuOpen(false)}
+                          >
+                            <Users size={16} />
+                            <span className="font-medium">Programme d'affiliation</span>
                           </Link>
                         </div>
                       </>
