@@ -1,14 +1,371 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logos/FLG.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Romain FLG - Hub centralisé pour tous vos projets avec système de crédits universel" />
-    <title>Romain FLG - Hub de Projets</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romain FLG</title>
+    <meta name="description" content="Découvrez mes projets d'échecs innovants : ChessValue, Chess100, Chess64. Outils et variantes créés par Romain FLG pour enrichir votre expérience échiquéenne.">
+    <meta name="keywords" content="échecs, chess, outils échecs, variantes échecs, Romain FLG, ChessValue, Chess100, Chess64">
+    <meta name="author" content="Romain FLG">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Romain FLG - Mes outils et variantes d'échecs">
+    <meta property="og:description" content="Découvrez mes projets d'échecs innovants : ChessValue, Chess100, Chess64. Outils et variantes créés par Romain FLG pour enrichir votre expérience échiquéenne.">
+    <meta property="og:url" content="https://romainflg.fr">
+    <meta property="og:site_name" content="Romain FLG">
+    <meta property="og:image" content="https://romainflg.fr/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Romain FLG - Mes outils et variantes d'échecs">
+    <meta name="twitter:description" content="Découvrez mes projets d'échecs innovants : ChessValue, Chess100, Chess64">
+    <meta name="twitter:image" content="https://romainflg.fr/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232563eb'/><text y='75' font-size='60' font-family='system-ui' fill='white' text-anchor='middle' x='50'>♞</text></svg>">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA/4QAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREQAAAAAAEAAAEAAAAAEAAAEAAAAAEAAAEAAAAAEAAAEAAAAAEAAAEAAAAAEAAAEAAAAAEAAAAAAAAAEAAAEAAAAAAAAAAAAAAAEAAAEAAAAAAAAAAAAAAAEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fadeIn': 'fadeIn 0.6s ease-out',
+                        'slideUp': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Preload critical font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .hover-lift { transition: transform 0.2s ease; }
+        .hover-lift:hover { transform: translateY(-2px); }
+        .focus-ring { transition: all 0.2s ease; }
+        .focus-ring:focus { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-900 leading-relaxed">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-blue-600 hover:text-blue-700 focus-ring transition-colors" aria-label="Accueil - romainflg.fr">
+                        romainflg.fr
+                    </a>
+                </div>
+                <div>
+                    <a href="https://fr.tipeee.com/romain-falanga" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 hover-lift focus-ring"
+                       aria-label="Faire un don sur Tipeee (ouvre dans un nouvel onglet)">
+                        Faire un don
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="py-20 lg:py-28 animate-fadeIn">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                        Bienvenue sur Romainflg.fr
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+                        Ici, vous pouvez découvrir mes projets, me soutenir ou me contacter pour contribuer à leur développement.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="https://fr.tipeee.com/romain-falanga" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover-lift focus-ring min-w-[200px] inline-block text-center"
+                           aria-label="Me soutenir sur Tipeee (ouvre dans un nouvel onglet)">
+                            Faire un don
+                        </a>
+                        <a href="https://www.linkedin.com/in/romain-falanga-99b9a118a" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 hover-lift focus-ring min-w-[200px] inline-block text-center"
+                           aria-label="Mon LinkedIn (ouvre dans un nouvel onglet)">
+                            Mon LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projets" class="py-20 bg-white" aria-labelledby="projets-title">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 id="projets-title" class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                        Mes Projets
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Découvrez mes outils et variantes d'échecs innovants
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: ChessValue -->
+                    <article class="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover-lift border border-gray-100 hover:border-blue-200 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="aspect-video bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center overflow-hidden">
+                                <img src="/chessvalue.jpg" alt="Logo Chess Value" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">Chess Value</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                                    Évalue dynamiquement la valeur des pièces selon leur position réelle sur l'échiquier.
+                                </p>
+                                <a href="https://chessvalue.netlify.app/" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover-lift focus-ring w-full text-center shadow-lg hover:shadow-xl"
+                                   aria-label="Ouvrir Chess Value (ouvre dans un nouvel onglet)">
+                                    Ouvrir Chess Value
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Chess100 -->
+                    <article class="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover-lift border border-gray-100 hover:border-green-200 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="aspect-video bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center overflow-hidden">
+                                <img src="/chessvariant100.jpg" alt="Logo Chess Variant 100" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-green-700 transition-colors duration-300">Chess Variant 100</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                                    Crée des parcours à partager : atteins la 100e rangée en changeant de pièce à chaque coup selon un ordre défini.
+                                </p>
+                                <a href="https://chessvariant100.netlify.app/" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="inline-block bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover-lift focus-ring w-full text-center shadow-lg hover:shadow-xl"
+                                   aria-label="Ouvrir Chess Variant 100 (ouvre dans un nouvel onglet)">
+                                    Ouvrir Chess Variant 100
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Chess64 -->
+                    <article class="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover-lift border border-gray-100 hover:border-purple-200 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="aspect-video bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center overflow-hidden">
+                                <img src="/chessvariant64.jpg" alt="Logo Chess Variant 64" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-8">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">Chess Variant 64</h3>
+                                <p class="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                                    Variante de jeu : à chaque tour, choisis entre déplacer une pièce ou supprimer une case de l'échiquier.
+                                </p>
+                                <a href="https://chessvariant64.netlify.app/" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover-lift focus-ring w-full text-center shadow-lg hover:shadow-xl"
+                                   aria-label="Ouvrir Chess Variant 64 (ouvre dans un nouvel onglet)">
+                                    Ouvrir Chess Variant 64
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="soutenir" class="py-20 bg-orange-50" aria-labelledby="soutenir-title">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 id="soutenir-title" class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+                    Me soutenir
+                </h2>
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-full mb-6">
+                        <svg class="w-10 h-10 text-orange-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Vos dons m'aident à développer et maintenir ces projets. Chaque contribution, même petite, fait la différence.
+                </p>
+                <div class="relative inline-block">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                    <a href="https://fr.tipeee.com/romain-falanga" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="relative inline-block bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-12 rounded-xl transition-all duration-300 hover-lift focus-ring text-lg shadow-xl hover:shadow-2xl"
+                       aria-label="Soutenir sur Tipeee (ouvre dans un nouvel onglet)">
+                        Faire un don
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-blue-50" aria-labelledby="contact-title">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 id="contact-title" class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
+                    Contact & Collaboration
+                </h2>
+                <div class="mb-8">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full mb-6">
+                        <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Envie d'aider sur la conception, le développement, le design, ou la promotion ? N'hésitez pas à me contacter !
+                </p>
+                <div class="relative inline-block">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                    <a href="https://www.linkedin.com/in/romain-falanga-99b9a118a" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="relative inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-12 rounded-xl transition-all duration-300 hover-lift focus-ring text-lg shadow-xl hover:shadow-2xl"
+                       aria-label="Échanger sur LinkedIn (ouvre dans un nouvel onglet)">
+                        Échanger sur LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" role="contentinfo">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="text-gray-300">
+                        © <span id="current-year"></span> Romain FLG – Tous droits réservés.
+                    </p>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#mentions" class="text-gray-300 hover:text-white transition-colors focus-ring" aria-label="Mentions légales">
+                        Mentions légales
+                    </a>
+                    <a href="https://www.linkedin.com/in/romain-falanga-99b9a118a" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white transition-colors focus-ring"
+                       aria-label="LinkedIn (ouvre dans un nouvel onglet)">
+                        LinkedIn
+                    </a>
+                    <a href="https://fr.tipeee.com/romain-falanga" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="text-gray-300 hover:text-white transition-colors focus-ring"
+                       aria-label="Tipeee (ouvre dans un nouvel onglet)">
+                        Tipeee
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton?.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
+            mobileMenu?.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu?.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuButton?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+                mobileMenu?.classList.add('hidden');
+                mobileMenuButton?.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Smooth scroll with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slideUp');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('article, section').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>

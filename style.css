@@ -1,0 +1,46 @@
+@@ .. @@
+         html { scroll-behavior: smooth; }
+-        .hover-lift { transition: transform 0.2s ease; }
+-        .hover-lift:hover { transform: translateY(-2px); }
++        .hover-lift { transition: transform 0.3s ease; }
++        .hover-lift:hover { transform: translateY(-4px); }
+         .focus-ring { transition: all 0.2s ease; }
+         .focus-ring:focus { outline: 2px solid #3b82f6; outline-offset: 2px; }
++        
++        /* Enhanced animations */
++        @keyframes float {
++            0%, 100% { transform: translateY(0px); }
++            50% { transform: translateY(-10px); }
++        }
++        
++        .animate-float {
++            animation: float 3s ease-in-out infinite;
++        }
++        
++        /* Gradient text effect */
++        .gradient-text {
++            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++            -webkit-background-clip: text;
++            -webkit-text-fill-color: transparent;
++            background-clip: text;
++        }
++        
++        /* Glassmorphism effect */
++        .glass {
++            background: rgba(255, 255, 255, 0.25);
++            backdrop-filter: blur(10px);
++            border: 1px solid rgba(255, 255, 255, 0.18);
++        }
++        
++        /* Shimmer effect */
++        .shimmer {
++            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
++            background-size: 200% 100%;
++            animation: shimmer 2s infinite;
++        }
++        
++        @keyframes shimmer {
++            0% { background-position: -200% 0; }
++            100% { background-position: 200% 0; }
++        }
+     </style>
